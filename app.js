@@ -5,10 +5,6 @@ const yili = document.getElementById('yili');
 const kimga = document.getElementById('kimga');
 
 
-// const priceInput = document.getElementById('price-input');
-// const quantityIput = document.getElementById('quantity-input');
-// const vatInput = document.getElementById('vat-input');
-
 // buttons
 
 const successButton = document.getElementById('btn-success');
@@ -17,7 +13,7 @@ const resetButton = document.getElementById('btn-reset');
 // Results
 
 const finalCostInput = document.getElementById('dynamic__cost');
-// const message = document.getElementById('cost_text')
+const message = document.getElementById('cost_text')
 
 function calculateTotalCost() {
 
@@ -101,40 +97,96 @@ function calculateTotalCost() {
         boji = bhm * 5 / 10 ; 
     } 
 
-    // total = subTotal + (subTotal * vat) / 100;
-    
-    // finalCostInput.textContent = total.toFixed(2)
     finalCostInput.textContent = boji.toLocaleString()
-    // let msg = showMessage(total);
     let msg = showMessage(boji);
-    // message.textContent = msg
     message.textContent = msg
 
 }
 
 
 
-// function showMessage(cost) {
-//     if (cost < 100) {
-//         return "Cost is Cheap";
-//     } else if (cost >= 100 && cost < 500) {
-//         return "Cost is medium";
-//     }else if (cost >= 500 && cost < 1000) {
-//         return "Cost is high";
-//     } else if (cost >= 1000 && cost <= 5000) {
-//         return "Cost is expensive";
-//     } else {
-//         return "cost is super expensive";
-//     }
-// }
+function showMessage(cost) {
+    
+    let otKuchi, ishYili, sotdiKimga, boji;
+   
+    otKuchi = kuchi.value;
+    ishYili   = yili.value;
+    sotdiKimga   = kimga.value;
 
+    if (otKuchi === '59' && ishYili === '2' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 4 baravari"; 
+    } else if (otKuchi === '109' && ishYili === '2' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 6 baravari"; 
+    }else if (otKuchi === '110' && ishYili === '2' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 10 baravari"; 
+    }
+    
+    else if (otKuchi === '59' && ishYili === '6' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 3 baravari";    
+    }  else if (otKuchi === '109' && ishYili === '6' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 4 baravari"; 
+    }else if (otKuchi === '110' && ishYili === '6' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 8 baravari"; 
+    } 
+    else if (otKuchi === '59' && ishYili === '7' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 2 baravari";    
+    }  else if (otKuchi === '109' && ishYili === '7' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 3 baravari"; 
+    }else if (otKuchi === '110' && ishYili === '7' && sotdiKimga === "begona") {
+        return "bazaviy hisoblash miqdorining 5 baravari"; 
+    } 
+
+    else if (otKuchi === '59' && ishYili === '2' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 2 baravari" ; 
+    } else if (otKuchi === '109' && ishYili === '2' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 3 baravari" ; 
+    }else if (otKuchi === '110' && ishYili === '2' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 5 baravari"  ; 
+    }
+    
+    else if (otKuchi === '59' && ishYili === '6' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 1.5 baravari" ;    
+    }  else if (otKuchi === '109' && ishYili === '6' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 2 baravari" ; 
+    }else if (otKuchi === '110' && ishYili === '6' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 4 baravari" ; 
+    } 
+    else if (otKuchi === '59' && ishYili === '7' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 1 baravari" ;    
+    }  else if (otKuchi === '109' && ishYili === '7' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 1.5 baravari" ; 
+    }else if (otKuchi === '110' && ishYili === '7' && sotdiKimga === "qarindosh") {
+        return "bazaviy hisoblash miqdorining 2.5 baravari" ; 
+    } 
+
+    else if (otKuchi === '59' && ishYili === '2' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 40 foizi" ; 
+    } else if (otKuchi === '109' && ishYili === '2' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 60 foizi" ; 
+    }else if (otKuchi === '110' && ishYili === '2' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 1 baravari"  ; 
+    }
+    
+    else if (otKuchi === '59' && ishYili === '6' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 30 foizi" ;    
+    }  else if (otKuchi === '109' && ishYili === '6' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 40 foizi" ; 
+    }else if (otKuchi === '110' && ishYili === '6' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 80 foizi" ; 
+    } 
+    else if (otKuchi === '59' && ishYili === '7' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 20 foizi" ;    
+    }  else if (otKuchi === '109' && ishYili === '7' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 30 foizi" ; 
+    }else if (otKuchi === '110' && ishYili === '7' && sotdiKimga === "kredit") {
+        return "bazaviy hisoblash miqdorining 50 foizi" ; 
+    } 
+}
 
 function reset() {
-    // kuchi.value = ""
-    // yili.value = ""
-    // kimga.value = ""
+ 
     finalCostInput.textContent = "_____________________"
-    // message.textContent = ""
+    message.textContent = ""
 }
 
 
