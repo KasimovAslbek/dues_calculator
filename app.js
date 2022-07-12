@@ -5,6 +5,10 @@ const yili = document.getElementById('yili');
 const kimga = document.getElementById('kimga');
 
 
+// const priceInput = document.getElementById('price-input');
+// const quantityIput = document.getElementById('quantity-input');
+// const vatInput = document.getElementById('vat-input');
+
 // buttons
 
 const successButton = document.getElementById('btn-success');
@@ -97,8 +101,13 @@ function calculateTotalCost() {
         boji = bhm * 5 / 10 ; 
     } 
 
+    // total = subTotal + (subTotal * vat) / 100;
+    
+    // finalCostInput.textContent = total.toFixed(2)
     finalCostInput.textContent = boji.toLocaleString()
+    // let msg = showMessage(total);
     let msg = showMessage(boji);
+    // message.textContent = msg
     message.textContent = msg
 
 }
@@ -106,9 +115,12 @@ function calculateTotalCost() {
 
 
 function showMessage(cost) {
-    
+    // return "Cost is Cheap";
     let otKuchi, ishYili, sotdiKimga, boji;
-   
+    // price = Number(priceInput.value);
+    // qty   = Number(quantityIput.value);
+    // vat   = Number(vatInput.value);
+    // subTotal = price * qty;
     otKuchi = kuchi.value;
     ishYili   = yili.value;
     sotdiKimga   = kimga.value;
@@ -184,7 +196,9 @@ function showMessage(cost) {
 }
 
 function reset() {
- 
+    // kuchi.value = ""
+    // yili.value = ""
+    // kimga.value = ""
     finalCostInput.textContent = "_____________________"
     message.textContent = ""
 }
